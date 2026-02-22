@@ -1,4 +1,5 @@
 import ResultCardCarousel from "@/components/result/ResultCardCarousel";
+import Link from "next/link";
 
 export default function ResultPage() {
   return (
@@ -6,9 +7,12 @@ export default function ResultPage() {
       <div className="mx-auto flex max-w-[430px] min-h-dvh flex-col px-5 pt-15 bg-black">
         <div className="text-center">
           <h1 className="text-2xl font-bold">내게 꼭 맞는 코스가 준비됐어요</h1>
-          <button className="mt-2.5 text-md font-normal text-white underline">
+          <Link
+            href="/onboarding"
+            className="flex  justify-center mt-2.5 text-md font-normal text-white underline"
+          >
             다시 검사 할래요
-          </button>
+          </Link>
         </div>
 
         <div className="mt-10 bg-black">

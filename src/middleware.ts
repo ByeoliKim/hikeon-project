@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export function middleware(req: NextRequest) {
+  // 테스트 모드 세팅
+  const testMode = process.env.NEXT_PUBLIC_ONBOARDING_TEST_MODE === "1";
+  if (testMode) return NextResponse.next();
+
   const { pathname } = req.nextUrl;
 
   if (
