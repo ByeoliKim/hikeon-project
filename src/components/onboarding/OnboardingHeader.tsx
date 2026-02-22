@@ -30,8 +30,8 @@ export default function OnboardingHeader({
           <Image
             src={
               disableBack
-                ? "/images/onboarding/onboading_header_arrow_icon_disabled.png"
-                : "/images/onboarding/onboading_header_arrow_icon.png"
+                ? "/images/onboarding/onboarding_header_arrow_icon_disabled.png"
+                : "/images/onboarding/onboarding_header_arrow_icon.png"
             }
             width={12}
             height={22}
