@@ -11,7 +11,11 @@ import OnboardingHeader from "./OnboardingHeader";
 import SurveyStep from "./SurveyStep";
 import PainStep from "./PainStep";
 
-type IntroStep = { id: "intro" };
+type IntroStep = {
+  id: "intro";
+  title: string;
+  title2?: string;
+};
 type Steps = IntroStep | (typeof SURVEY_STEPS)[number];
 
 export default function OnboardingWizard() {
@@ -31,7 +35,17 @@ export default function OnboardingWizard() {
   const togglePreference = useOnboardingStore((s) => s.togglePreference);
 
   // intro + 설문 steps
-  const steps = useMemo(() => [{ id: "intro" as const }, ...SURVEY_STEPS], []);
+  const steps = useMemo(
+    () => [
+      {
+        id: "intro" as const,
+        title: "",
+        title2: "",
+      },
+      ...SURVEY_STEPS,
+    ],
+    [],
+  );
   const [stepIndex, setStepIndex] = useState(0);
 
   const step = steps[stepIndex];
@@ -110,10 +124,16 @@ export default function OnboardingWizard() {
         disableBack={isFirstSurveyStep}
       />
       <main className="flex-1 pt-12 px-5">
-        <h1 className=" whitespace-pre-line text-2xl font-bold leading-snug text-(--font-color)">
-          {step.title}
-        </h1>
-        <p className="mb-12 text-lg text-(--font-point-color)">{step.title2}</p>
+        {!isIntro && (
+          <>
+            <h1 className=" whitespace-pre-line text-2xl font-bold leading-snug text-(--font-color)">
+              {step.title}
+            </h1>
+            <p className="mb-12 text-lg text-(--font-point-color)">
+              {step.title2}
+            </p>
+          </>
+        )}
         <div className="mt-6">
           {/* single */}
           {step.id === "experience" ? (
