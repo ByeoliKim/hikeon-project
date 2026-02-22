@@ -94,12 +94,16 @@ export default function OnboardingWizard() {
     if (isLast) {
       complete();
 
-      // 쿠키 찍기
-      await fetch("/api/onboarding/complete", {
-        method: "POST",
-      });
+      //  임시 배포용: 쿠키 API 실패해도 결과 페이지는 무조건 이동
+      try {
+        await fetch("/api/onboarding/complete", { method: "POST" });
+      } catch (e) {
+        // ignore
+        console.warn("complete cookie api failed:", e);
+      } finally {
+        router.replace("/result");
+      }
 
-      router.replace("/result");
       return;
     }
 

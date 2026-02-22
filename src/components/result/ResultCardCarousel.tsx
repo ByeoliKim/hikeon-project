@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useRef, useCallback, useEffect, useMemo, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import type { ResultCard } from "@/types/result";
-import { ArrowUpRight } from "lucide-react";
 
 // type Thumb = { id: string; src: string; alt?: string };
 
@@ -31,7 +30,7 @@ export default function ResultCardCarousel() {
         elevation: "352m",
         time: "1시간25분",
         tags: ["초급", "서울"],
-        image: "/images/result/result_thumbs1.png",
+        image: `/images/result/result_thumbs${i + 1}.png`,
         thumb: `/images/result/result_thumbs${i + 1}.png`,
       })),
     [],
@@ -188,11 +187,12 @@ export default function ResultCardCarousel() {
                     <div className="mt-4 overflow-hidden rounded-2xl">
                       <div className="relative aspect-4/3 w-full bg-neutral-200">
                         <Image
-                          src="/images/result/result_thumbs1.png"
-                          alt="인왕산"
+                          src={c.image}
+                          alt={c.title}
                           fill
                           className="object-cover"
-                          unoptimized
+                          sizes="(max-width: 430px) 86vw, 420px"
+                          priority={i === 0}
                         />
                       </div>
                     </div>
