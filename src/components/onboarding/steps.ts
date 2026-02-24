@@ -124,7 +124,7 @@ export const SURVEY_STEPS = [
   },
   {
     id: "pain",
-    title: "몸 상태 중\n체크할 게 있다면? ",
+    title: "불편한 부위와\n정도를 선택해 주세요 ",
     title2: "(중복 가능)",
     kind: "multi",
     minSelected: 0,

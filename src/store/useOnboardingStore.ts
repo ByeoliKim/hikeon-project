@@ -25,9 +25,15 @@ export type OnboardingAnswers = {
 export type PainArea = "none" | "ankle" | "knee" | "waist" | "shoulder";
 export type PainLevel = 1 | 2 | 3 | 4 | 5;
 
+export type PainChoice = PainArea;
+export type PainSeverity = 1 | 2 | 3;
+
 export type PainState = {
   selected: Exclude<PainArea, "none">[]; // none 제외
   levels: Partial<Record<Exclude<PainArea, "none">, PainLevel>>;
+
+  choice?: PainChoice;
+  severity?: PainSeverity;
 };
 
 type OnboardingState = {
@@ -43,6 +49,9 @@ type OnboardingState = {
   togglePainArea: (area: Exclude<PainArea, "none">) => void;
   setPainLevel: (area: Exclude<PainArea, "none">, level: PainLevel) => void;
   setPainNone: () => void;
+  setPainChoice: (choice: PainChoice) => void;
+  setPainSeverity: (severity: PainSeverity) => void;
+  clearPainChoice: () => void;
   complete: () => void;
   reset: () => void;
 };
@@ -50,7 +59,7 @@ type OnboardingState = {
 const initialAnswers: OnboardingAnswers = {
   important: [],
   preference: [],
-  pain: { selected: [], levels: {} },
+  pain: { selected: [], levels: {}, choice: undefined, severity: undefined },
 };
 
 export const useOnboardingStore = create<OnboardingState>()(
@@ -132,6 +141,34 @@ export const useOnboardingStore = create<OnboardingState>()(
           answers: {
             ...s.answers,
             pain: { selected: [], levels: {} },
+          },
+        })),
+      setPainChoice: (choice) =>
+        set((s) => ({
+          answers: {
+            ...s.answers,
+            pain: {
+              ...s.answers.pain,
+              choice,
+              // 부위 바꾸면 severity는 초기화(선택 전 유지)
+              severity: choice === "none" ? undefined : s.answers.pain.severity,
+            },
+          },
+        })),
+
+      setPainSeverity: (severity) =>
+        set((s) => ({
+          answers: {
+            ...s.answers,
+            pain: { ...s.answers.pain, severity },
+          },
+        })),
+
+      clearPainChoice: () =>
+        set((s) => ({
+          answers: {
+            ...s.answers,
+            pain: { ...s.answers.pain, choice: undefined, severity: undefined },
           },
         })),
 
