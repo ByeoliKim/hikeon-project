@@ -37,7 +37,7 @@ export default function PainStep() {
           <div
             key={opt.key}
             className={[
-              "rounded-2xl border-2 px-3 py-2.5 transition ",
+              "rounded-lg border-2 px-3 py-3 transition ",
               selected
                 ? "border-(--primary) bg-white"
                 : "border-transparent bg-(--button-sub-color)",
