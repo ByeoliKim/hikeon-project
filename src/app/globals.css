@@ -10,11 +10,12 @@
   /* === Base UI === */
   --primary: #3182F7;
   --font-color: #171717;
+  --font-color2: #404040;
+  --font-color3: #a3a3a3;
   --font-sub-color: #525252;
-  --font-point-color: #C9C9C9;
-  --button-color: #3182F7;
-  --button-sub-color: #F5F5F5;
-  --border-color: #3182F7;
+  --font-sub-color2: #757575;
+  --font-point-color: #c9c9c9;
+  --button-sub-color: #f5f5f5;
   --bg-color: #F5F5F5;
   /* === ProgressBar UI === */
   --progress-bg: #E5E5E5;
@@ -22,19 +23,7 @@
   /* === onboarding === */
   --onboarding-font-color: #262626;
   --onboarding-font-sub-color: #404040;
-  --pain-icon-color: #A3A3A3;
-}
-
-
-
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-} */
-
-
-body {
-
+  --pain-icon-color: #a3a3a3;
 }
 
 button {

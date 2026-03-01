@@ -197,7 +197,7 @@ export default function OnboardingWizard() {
           type="button"
           onClick={goNext}
           disabled={!canGoNext}
-          className="w-full h-13 rounded-lg bg-(--button-color) text-[16px] font-semibold text-white disabled:bg-neutral-200 disabled:text-neutral-500"
+          className="w-full h-13 rounded-lg bg-(--primary) text-[16px] font-semibold text-white disabled:bg-neutral-200 disabled:text-neutral-500"
         >
           {isLast ? "완료" : "다음"}
         </button>

@@ -45,7 +45,7 @@ export default function IntroPage({
           <button
             type="button"
             onClick={onStart}
-            className="h-13 w-full rounded-lg bg-(--button-color) text-[16px] font-semibold text-white"
+            className="h-13 w-full rounded-lg bg-(--primary) text-[16px] font-semibold text-white"
           >
             시작하기
           </button>

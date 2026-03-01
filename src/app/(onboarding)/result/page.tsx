@@ -20,8 +20,8 @@ export default function ResultPage() {
         </div>
 
         <div className="mt-8 space-y-4 pb-5">
-          <button className="w-full py-3.5 rounded-md bg-(--button-color) text-md font-semibold text-white">
-            어플 둘러보고 운동하기
+          <button className="w-full py-3.5 rounded-md bg-(--primary) text-md font-semibold text-white">
+            <Link href="/">어플 둘러보고 운동하기</Link>
           </button>
           <button className="w-full py-3.5 rounded-md bg-white text-md font-semibold text-(--font-color)">
             선택한 코스 바로 보기

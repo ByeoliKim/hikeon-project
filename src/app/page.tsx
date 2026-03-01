@@ -2,7 +2,13 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+// store
 import { useOnboardingStore } from "@/store/useOnboardingStore";
+// components
+import Header from "@/components/layout/Header";
+import MainVisual from "@/components/main/MainVisual";
+import RecommendCourse from "@/components/main/RecommendCourse";
+import RecommendBanner from "@/components/main/RecommendBanner";
 
 export default function HomePage() {
   const router = useRouter();
@@ -16,16 +22,13 @@ export default function HomePage() {
   if (!hasCompleted) return null;
 
   return (
-    <main className="p-6">
-      <h1 className="text-xl font-bold">메인</h1>
-
-      {/* <p className="mt-2 text-sm text-neutral-600">
-        (임시) 설문 결과가 저장되어 있어요.
-      </p>
-
-      <pre className="mt-4 rounded-xl bg-neutral-100 p-4 text-xs">
-        {JSON.stringify(answers, null, 2)}
-      </pre> */}
+    <main className="min-h-dvh bg-neutral-100">
+      <div className="mx-auto min-h-dvh w-full max-w-[420px] bg-white">
+        <Header />
+        <MainVisual />
+        <RecommendCourse />
+        <RecommendBanner />
+      </div>
     </main>
   );
 }
