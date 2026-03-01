@@ -45,6 +45,13 @@
 //   // matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
 //   matcher: [], // 페이지 확인용
 // };
+
+import { NextResponse } from "next/server";
+
+export function middleware() {
+  return NextResponse.next();
+}
+
 // 온보딩 페이지 테스트용
 export const config = {
   matcher: ["/:path*"],
