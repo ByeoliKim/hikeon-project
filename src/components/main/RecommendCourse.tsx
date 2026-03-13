@@ -74,7 +74,7 @@ export default function RecommendCourse() {
           생각하는 User님에게 추천하는 코스입니다.
         </h3>
         <div className="mt-7.5">
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-2 gap-4">
             {courses.map((course) => {
               const wished = wishedIds.includes(course.id);
               return (

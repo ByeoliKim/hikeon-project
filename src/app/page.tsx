@@ -9,6 +9,7 @@ import Header from "@/components/layout/Header";
 import MainVisual from "@/components/main/MainVisual";
 import RecommendCourse from "@/components/main/RecommendCourse";
 import RecommendBanner from "@/components/main/RecommendBanner";
+import PopularPlace from "@/components/main/PopularPlace";
 
 export default function HomePage() {
   const router = useRouter();
@@ -28,6 +29,7 @@ export default function HomePage() {
         <MainVisual />
         <RecommendCourse />
         <RecommendBanner />
+        <PopularPlace />
       </div>
     </main>
   );
