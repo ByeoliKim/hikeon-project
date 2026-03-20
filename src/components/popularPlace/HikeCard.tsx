@@ -4,7 +4,7 @@ import { Hike } from "@/types/hike";
 export default function HikeCard({ hike }: { hike: Hike }) {
   return (
     <article className="flex gap-3">
-      <div className="relative w-[96px] h-[96px] rounded-xl overflow-hidden">
+      <div className="relative w-[115px] h-[115px] rounded-xl overflow-hidden">
         <Image
           src={hike.image}
           alt={hike.title}
@@ -14,16 +14,24 @@ export default function HikeCard({ hike }: { hike: Hike }) {
       </div>
 
       <div>
-        <h3 className="font-semibold">{hike.title}</h3>
-        <p className="text-sm text-gray-400">{hike.description}</p>
-        <p className="text-sm text-gray-400">
+        <h3 className="mb-2 text-(--font-color) text-[16px] font-semibold">
+          {hike.title}
+        </h3>
+        <p className="mb-2 text-(--font-color2) text-[14px] font-normal">
+          {hike.description}
+        </p>
+        <p className="mb-1.5 text-(--font-color3) text-[13px] font-normal">
           {hike.height}m · {hike.duration}분
         </p>
 
-        <div className="flex gap-2 mt-1 text-xs">
-          <span className="bg-gray-100 px-2 py-1 rounded">{hike.level}</span>
+        <div className="flex gap-1.5">
+          <span className="bg-(--button-sub-color) px-1.5 py-1 rounded-xs text-(--font-sub-color) text-[13px] font-medium">
+            {hike.level}
+          </span>
 
-          <span className="bg-gray-100 px-2 py-1 rounded">{hike.region}</span>
+          <span className="bg-(--button-sub-color) px-1.5 py-1 rounded-xs text-(--font-sub-color) text-[13px] font-medium">
+            {hike.region}
+          </span>
         </div>
       </div>
     </article>

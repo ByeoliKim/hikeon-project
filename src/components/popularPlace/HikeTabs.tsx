@@ -20,12 +20,12 @@ export default function HikeTabs() {
   return (
     <div>
       {/* 탭 */}
-      <div className="flex gap-2 overflow-x-auto mb-4">
+      <div className="flex flex-wrap gap-2 overflow-x-auto mb-4.5">
         {tabs.map((tab) => (
           <button
             key={tab.value}
             onClick={() => setActiveTab(tab.value as HikeTag)}
-            className={`px-3 py-2 rounded-full text-sm ${activeTab === tab.value ? "bg-blue-500 text-white" : "bg-gray-100"}`}
+            className={`px-3 py-2 rounded-full text-sm ${activeTab === tab.value ? "bg-(--primary) text-white" : "bg-white border border-(--btn-border-color)"}`}
           >
             {tab.label}
           </button>

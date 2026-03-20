@@ -24,6 +24,8 @@
   --onboarding-font-color: #262626;
   --onboarding-font-sub-color: #404040;
   --pain-icon-color: #a3a3a3;
+  /* === main === */
+  --btn-border-color: #E5E5E5;
 }
 
 button {
