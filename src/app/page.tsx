@@ -10,6 +10,7 @@ import MainVisual from "@/components/main/MainVisual";
 import RecommendCourse from "@/components/main/RecommendCourse";
 import RecommendBanner from "@/components/main/RecommendBanner";
 import PopularPlace from "@/components/main/PopularPlace";
+import CustomChallenge from "@/components/main/CustomChallenge";
 
 export default function HomePage() {
   const router = useRouter();
@@ -30,6 +31,7 @@ export default function HomePage() {
         <RecommendCourse />
         <RecommendBanner />
         <PopularPlace />
+        <CustomChallenge />
       </div>
     </main>
   );
