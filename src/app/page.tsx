@@ -11,6 +11,8 @@ import RecommendCourse from "@/components/main/RecommendCourse";
 import RecommendBanner from "@/components/main/RecommendBanner";
 import PopularPlace from "@/components/main/PopularPlace";
 import CustomChallenge from "@/components/main/CustomChallenge";
+import MeetupSection from "@/components/meetup/MeetupSection";
+import HikingTipSection from "@/components/tips/HikingTipSection";
 
 export default function HomePage() {
   const router = useRouter();
@@ -32,6 +34,8 @@ export default function HomePage() {
         <RecommendBanner />
         <PopularPlace />
         <CustomChallenge />
+        <MeetupSection />
+        <HikingTipSection />
       </div>
     </main>
   );

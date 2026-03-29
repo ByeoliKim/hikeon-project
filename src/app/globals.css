@@ -12,6 +12,7 @@
   --font-color: #171717;
   --font-color2: #404040;
   --font-color3: #a3a3a3;
+  --font-color4: #737373;
   --font-sub-color: #525252;
   --font-sub-color2: #757575;
   --font-point-color: #c9c9c9;
@@ -27,6 +28,8 @@
   /* === main === */
   --btn-border-color: #E5E5E5;
   --btn-bg-color: #171717;
+  --line-color: #E5E5E5;
+  --btn-text-color: #737373;
 }
 
 button {
