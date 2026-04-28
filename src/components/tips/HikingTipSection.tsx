@@ -5,7 +5,7 @@ import HikingTipList from "./HikingTipList";
 
 export default function HikingTipSection() {
   return (
-    <section className="px-4 pt-6">
+    <section className="px-4 pt-6 pb-10">
       {/* 헤더 */}
       <div className="flex items-center justify-between">
         <h2 className="text-[24px] font-bold text-(--font-color)">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import BottomFixMenu from "@/components/layout/BottomFixMenu";
 
 const pretendard = localFont({
   src: [

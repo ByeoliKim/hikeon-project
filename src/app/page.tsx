@@ -13,6 +13,9 @@ import PopularPlace from "@/components/main/PopularPlace";
 import CustomChallenge from "@/components/main/CustomChallenge";
 import MeetupSection from "@/components/meetup/MeetupSection";
 import HikingTipSection from "@/components/tips/HikingTipSection";
+import ScrollTop from "@/components/layout/ScrollTop";
+import CourseBanner from "@/components/main/CourseBanner";
+import BottomFixMenu from "@/components/layout/BottomFixMenu";
 
 export default function HomePage() {
   const router = useRouter();
@@ -36,6 +39,8 @@ export default function HomePage() {
         <CustomChallenge />
         <MeetupSection />
         <HikingTipSection />
+        <CourseBanner />
+        <BottomFixMenu />
       </div>
     </main>
   );
